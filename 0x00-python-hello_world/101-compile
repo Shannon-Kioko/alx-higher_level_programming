@@ -1,0 +1,2 @@
+#!/bin/bash
+py_file=$PYFILE; if [ -n "$py_file" ]; then python -m py_compile "$py_file"; output_file="${py_file}c"; echo "Compiled: $output_file"; else echo "Environment var PYFILE is not set."; fi
