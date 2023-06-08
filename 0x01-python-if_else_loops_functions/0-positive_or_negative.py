@@ -2,7 +2,8 @@
 import random
 number = random.randint(-10, 10)
 if number > 0:
-  status = "positive"
+
+	status = "positive"
 elif number == 0:
 	status = "zero"
 elif number < 0:
