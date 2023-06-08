@@ -8,4 +8,4 @@ elif number == 0:
 elif number < 0:
     status = "negative"
 
-print(f"{number:d} is {status}")
+print("{:d} is {}".format(number, status))
