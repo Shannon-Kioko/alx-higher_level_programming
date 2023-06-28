@@ -16,7 +16,7 @@ class Square:
     Methods:
         __init__(size, position): Initializes a Square instance
         with a specified size and position.
-    
+
         area(): Calculates the area of the square.
         my_print(): Prints the square using "#" characters and spaces.
         __str__(): Returns a string representation of the square.
@@ -149,6 +149,6 @@ class Square:
             for _ in range(self.__position[1]):
                 square_str += "\n"
             for _ in range(self.__size):
-                square_str += " " * self.__position[0]\
+                square_str += " " * self.__position[0] \
                 + "#" * self.__size + "\n"
         return square_str.strip()
