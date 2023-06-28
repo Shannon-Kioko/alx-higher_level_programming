@@ -4,6 +4,7 @@
 Module: 6
 """
 
+
 class Square:
     """
     Reps a square shape with a given size and position.
@@ -13,7 +14,8 @@ class Square:
         position (tuple): The position of the square's top-left corner.
 
     Methods:
-        __init__(size, position): Initializes a Square instance with a specified size and position.
+        __init__(size, position): Initializes a Square instance with a
+        specified size and position.
         area(): Calculates and returns the area of the square.
         my_print(): Prints a visual representation of the square.
     """
@@ -24,10 +26,12 @@ class Square:
 
         Args:
             size (int): The size of the square's sides (default is 0).
-            position (tuple): The position of the square's top-left corner (default is (0, 0)).
+            position (tuple): The position of the square's top-left corner
+            (default is (0, 0)).
 
         Raises:
-            TypeError: If the provided size is not an integer or the position is not a tuple of 2 positive integers.
+            TypeError: If the provided size is not an integer or
+            the position is not a tuple of 2 positive integers.
             ValueError: If the provided size is less than 0.
         """
         self.__size = 0
@@ -84,7 +88,8 @@ class Square:
             value (tuple): The position of the square's top-left corner.
 
         Raises:
-            TypeError: If the provided position is not a tuple of 2 positive integers.
+            TypeError: If the provided position is not a
+            tuple of 2 positive integers.
         """
         if (
             not isinstance(value, tuple)
