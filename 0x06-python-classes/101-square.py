@@ -4,6 +4,7 @@
 Module: 101
 """
 
+
 class Square:
     """
     Reps a square shape with given size and position.
@@ -13,7 +14,9 @@ class Square:
         position (tuple): The pos of the square's top-left corner.
 
     Methods:
-        __init__(size, position): Initializes a Square instance with a specified size and position.
+        __init__(size, position): Initializes a Square instance
+        with a specified size and position.
+    
         area(): Calculates the area of the square.
         my_print(): Prints the square using "#" characters and spaces.
         __str__(): Returns a string representation of the square.
@@ -25,11 +28,15 @@ class Square:
 
         Args:
             size (int): The size of the square's sides (default is 0).
-            position (tuple): The position of the square's top-left corner (default is (0, 0)).
+            position (tuple): The position of the square's
+            top-left corner (default is (0, 0)).
 
         Raises:
-            TypeError: If the provided size is not an integer or the position is not a tuple of 2 positive integers.
-            ValueError: If the provided size is less than 0 or any coordinate in the position is less than 0.
+            TypeError: If the provided size is not an
+            integer or the position is not a tuple of 2 positive integers.
+
+            ValueError: If the provided size is less than 0 or
+            any coordinate in the position is less than 0.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -92,7 +99,8 @@ class Square:
             value (tuple): The position of the square's top-left corner.
 
         Raises:
-            TypeError: If the provided position is not a tuple of 2 positive integers.
+            TypeError: If the provided position
+            is not a tuple of 2 positive integers.
         """
         if (
             not isinstance(value, tuple)
@@ -141,5 +149,6 @@ class Square:
             for _ in range(self.__position[1]):
                 square_str += "\n"
             for _ in range(self.__size):
-                square_str += " " * self.__position[0] + "#" * self.__size + "\n"
+                square_str += " " * self.__position[0]\
+                + "#" * self.__size + "\n"
         return square_str.strip()
