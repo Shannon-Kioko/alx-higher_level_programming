@@ -4,6 +4,7 @@
 Module: 100
 """
 
+
 class Node:
     """
     Represents a node of a singly linked list.
@@ -13,7 +14,8 @@ class Node:
         next_node (Node): The next node in the linked list.
 
     Methods:
-        __init__(data, next_node=None): Initializes a Node instance with the given data and next node.
+        __init__(data, next_node=None): Initializes a Node instance
+        with the given data and next node.
     """
 
     def __init__(self, data, next_node=None):
@@ -22,7 +24,8 @@ class Node:
 
         Args:
             data (int): The data to be stored in the node.
-            next_node (Node): The next node in the linked list (default is None).
+            next_node (Node): The next node in the
+            linked list (default is None).
 
         Raises:
             TypeError: If the provided data is not an integer.
@@ -85,7 +88,8 @@ class SinglyLinkedList:
 
     Methods:
         __init__(): Initializes an empty SinglyLinkedList.
-        sorted_insert(value): Inserts a new node into the linked list in the correct sorted position.
+        sorted_insert(value): Inserts a new node into
+        the linked list in the correct sorted position.
         __str__(): Returns a string representation of the linked list.
     """
 
@@ -109,7 +113,8 @@ class SinglyLinkedList:
             self.head = new_node
         else:
             current = self.head
-            while current.next_node is not None and current.next_node.data < value:
+            while current.next_node is not None and\
+            current.next_node.data < value:
                 current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
