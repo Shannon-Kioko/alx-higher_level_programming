@@ -4,6 +4,7 @@
 Module 1: Square
 """
 
+
 class Square:
     """
     Represents a square shape.
