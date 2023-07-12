@@ -11,8 +11,10 @@ class Rectangle(BaseGeometry):
     """
     def __init__(self, width, height):
         """
-        Initializes a Rectangle instance with private attributes width and height.
-        Validates the width and height as positive integers using integer_validator of the
+        Initializes a Rectangle instance with private attributes;
+        width and height.
+        Validates the width and height as positive integers,
+        using integer_validator of the
         BaseGeometry class.
         """
         self.__width = 0
