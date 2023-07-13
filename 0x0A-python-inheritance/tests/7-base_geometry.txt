@@ -1,0 +1,37 @@
+Test Cases for BaseGeometry class
+
+1. Testing area() method when not implemented:
+    - Description: Calling the area() method without implementation should raise an Exception.
+    - Code:
+        geometry = BaseGeometry()
+        try:
+            geometry.area()
+        except Exception as e:
+            # Expected output: "area() is not implemented"
+            print(str(e))
+
+2. Testing integer_validator() method with valid input:
+    - Description: Calling the integer_validator() method with a valid integer should not raise any exceptions.
+    - Code:
+        geometry = BaseGeometry()
+        try:
+            geometry.integer_validator("test", 10)
+            # Expected output: No exception raised
+        except Exception as e:
+            print("Unexpected exception:", str(e))
+
+3. Testing integer_validator() method with invalid input:
+    - Description: Calling the integer_validator() method with a non-integer or a negative integer should raise TypeError or ValueError respectively.
+    - Code:
+        geometry = BaseGeometry()
+        try:
+            geometry.integer_validator("test", "invalid")
+        except TypeError as te:
+            # Expected output: "test must be an integer"
+            print(str(te))
+        
+        try:
+            geometry.integer_validator("test", -5)
+        except ValueError as ve:
+            # Expected output: "test must be greater than 0"
+            print(str(ve))
