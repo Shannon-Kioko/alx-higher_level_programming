@@ -1,0 +1,36 @@
+# File: 5-text_indentation.txt
+
+# Test case 1: Basic example
+>>> text_indentation("Hello. How are you? I am good.")
+Hello
+How are you
+I am good
+
+# Test case 2: Example with multiple punctuation characters
+>>> text_indentation("This is a test: will it work? Maybe!")
+This is a test
+will it work
+Maybe
+
+# Test case 3: No punctuation in the text
+>>> text_indentation("No punctuation here")
+No punctuation here
+
+# Test case 4: Invalid input (not a string)
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+# Test case 5: Example with multiple spaces after punctuation
+>>> text_indentation("Spaces after .   ?  :  ")
+Spaces after
+?
+:
+
+# Test case 6: Example with leading and trailing spaces
+>>> text_indentation("  Leading and trailing spaces.   ")
+Leading and trailing spaces
+
+# Test case 7: Example with only one character
+>>> text_indentation(".")
