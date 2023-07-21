@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Module on tests with addition"""
 def add_integer(a, b=98):
