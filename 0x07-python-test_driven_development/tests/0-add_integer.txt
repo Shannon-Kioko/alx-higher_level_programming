@@ -1,7 +1,7 @@
 # File: 0-add_integer.txt
 
 # Import the add_integer function from add_integer.py
-from add_integer import add_integer
+from 0-add_integer import add_integer
 
 # Test case 1: Valid input (integers)
 >>> add_integer(5, 3)
