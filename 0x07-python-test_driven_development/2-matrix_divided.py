@@ -6,9 +6,9 @@ This module provides functions to perform various operations
 on matrices, including division of elements by a given number.
 
 """
+
+
 def matrix_divided(matrix, div):
-
-
     """
     Divide all elements of a matrix by a given number
     and round to 2 decimal places.
@@ -29,8 +29,8 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is equal to 0.
     """
     # Check if matrix is a list of lists of integers or floats
-    if not all(isinstance(row, list) and all(isinstance(elem, \
-    (int, float)) for elem in row) for row in matrix):
+    if not all(isinstance(row, list) and all(isinstance(elem, (int, float)) \
+    for elem in row) for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists) \
 of integers/floats")
 
