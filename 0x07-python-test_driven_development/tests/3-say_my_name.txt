@@ -1,0 +1,25 @@
+# File: 3-say_my_name.txt
+
+# Test case 1: First name and last name provided
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+# Test case 2: Only first name provided
+>>> say_my_name("Alice")
+My name is Alice
+
+# Test case 3: Both names provided
+>>> say_my_name("Bob", "Smith")
+My name is Bob Smith
+
+# Test case 4: Invalid first name (not a string)
+>>> say_my_name(123, "Brown")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+# Test case 5: Invalid last name (not a string)
+>>> say_my_name("Mike", 456)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
