@@ -4,10 +4,10 @@ How to use 2-matrix_divided.py
 ============================
 This library has one function ``matrix_divided``
 
-# File: 0-add_integer.txt
+# File: 2-matrix_divided.txt
 
 Import matrix_divided from 2-matrix_divided
->>> matrix_divided = __import__(2-matrix_divided).matrix_divided
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
   >>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 2]
   [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
 
