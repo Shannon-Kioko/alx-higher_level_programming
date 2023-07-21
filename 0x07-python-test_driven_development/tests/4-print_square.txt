@@ -1,6 +1,7 @@
 # File: 4-print_square.txt
 
-# Test case 1: Size 3
+Importing file
+>>> print_square = __import__('4-print_square').print_square
 >>> print_square(3)
 ###
 ###
