@@ -1,4 +1,6 @@
 # File: 0-add_integer.txt
+importing from the right directory
+>>> from Test_Driven_development.0-add_integer import add_integer
 
 # Test case 1: Valid input (integers)
 >>> add_integer(5, 3)
