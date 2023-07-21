@@ -1,7 +1,7 @@
 # File: 3-say_my_name.txt
 
 #import from 3-say_my_name.py
-from ..3-say_my_name imporrt say_my_name
+from ..3-say_my_name import say_my_name
 
 # Test case 1: First name and last name provided
 >>> say_my_name("John", "Doe")
