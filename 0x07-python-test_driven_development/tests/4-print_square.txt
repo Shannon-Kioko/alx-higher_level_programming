@@ -1,0 +1,30 @@
+# File: 4-print_square.txt
+
+# Test case 1: Size 3
+>>> print_square(3)
+###
+###
+###
+
+# Test case 2: Size 5
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+# Test case 3: Size 0 (No output)
+>>> print_square(0)
+
+# Test case 4: Invalid size (less than 0)
+>>> print_square(-2)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+# Test case 5: Invalid size (float)
+>>> print_square(2.5)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
