@@ -7,7 +7,7 @@ My name is John Doe
 
 # Test case 2: Only first name provided
 >>> say_my_name("Alice")
-My name is Alice
+My name is Alice 
 
 # Test case 3: Both names provided
 >>> say_my_name("Bob", "Smith")
