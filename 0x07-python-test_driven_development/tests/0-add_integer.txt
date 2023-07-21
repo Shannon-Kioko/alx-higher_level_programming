@@ -38,4 +38,4 @@ TypeError: a must be an integer
 >>> add_integer(2, 'not_an_integer')
 Traceback (most recent call last):
 ...
-TypeError: b must be integer
+TypeError: b must be an integer
