@@ -30,7 +30,7 @@ def matrix_divided(matrix, div):
     """
     # Check if matrix is a list of lists of integers or floats
     if not all(isinstance(row, list) and all(isinstance(elem, \
-            (int, float)) for elem in row) for row in matrix):
+    (int, float)) for elem in row) for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists) \
         of integers/floats")
 
