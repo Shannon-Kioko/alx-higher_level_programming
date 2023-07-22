@@ -122,3 +122,23 @@ class Rectangle(Base):
             str: The string representation of Rectangle instance.
         """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def update(self, *args):
+        """
+        Assigns arguments to each attr in this order: id, width, height, x, y.
+
+        Parameters:
+            *args: A variable-length argument list. The order of arguments should be:
+                   1st argument - id attribute
+                   2nd argument - width attribute
+                   3rd argument - height attribute
+                   4th argument - x attribute
+                   5th argument - y attribute
+
+        Returns:
+            None
+        """
+        attributes = ['id', 'width', 'height', 'x', 'y']
+
+        for i, arg in enumerate(args,start=0):
+            setattr(self, attributes[i], arg)
