@@ -1,9 +1,7 @@
 File: my_list_test.txt
+
 Importing the MyList class.
-
-my_list = import('my_list').MyList
-
-Test case 1: Valid input (list of integers)
+>>> my_list = import('my_list').MyList
 >>> lst = my_list([3, 1, 5, 2, 4])
 >>> lst.print_sorted()
 [1, 2, 3, 4, 5]
