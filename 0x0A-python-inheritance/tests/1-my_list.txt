@@ -6,6 +6,12 @@ Importing the MyList class.
 >>> lst.print_sorted()
 [1, 2, 3, 4, 5]
 
+Test case 1: append method
+>>> lst= my_list([2, 3, 4])
+>>> lst.append(4)
+>>> lst.print_sorted()
+[2, 3, 4, 4]
+
 Test case 2: Valid input (empty list)
 >>> lst = my_list([])
 >>> lst.print_sorted()
