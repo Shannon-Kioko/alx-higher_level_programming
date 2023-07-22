@@ -21,6 +21,9 @@ Exception: area() is not implemented
 # Test case 4: Test integer_validator with valid input (integer == 0)
 >>> geometry = BaseGeometry()
 >>> geometry.integer_validator("radius", 0)
+Traceback (most recent call last):
+...
+ValueError: radius must be greater than 0
 
 # Test case 5: Test integer_validator with valid input (large integer)
 >>> geometry = BaseGeometry()
