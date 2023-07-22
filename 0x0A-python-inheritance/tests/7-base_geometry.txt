@@ -64,3 +64,34 @@ Traceback (most recent call last):
 ...
 TypeError: value must be an integer
 
+# Test case 11: No input (empty string)
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# Test case 12: With list item input
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator(“age”, [3])
+SyntaxError: invalid character in identifier
+
+# Test case 13: With list item input
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator(“age”, {3, 4})
+SyntaxError: invalid character in identifier
+
+# Test case 14: With list item input
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator(“age”, (4,))
+SyntaxError: invalid character in identifier
+
+# Test case 14: With bool input
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator(“age”, True)
+SyntaxError: invalid character in identifier
+
+# Test case 14: With boo input
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator(“age”)
+SyntaxError: invalid character in identifier
