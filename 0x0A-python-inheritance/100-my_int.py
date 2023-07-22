@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 
 """
-100-my_int
+100-my_int inherits from Int class
 """
 
 
 class MyInt(int):
+    """
+    Inherits from Int class
+    """
     def __eq__(self, other):
         """
         Overrides the '==' operator to invert the og behavior.
