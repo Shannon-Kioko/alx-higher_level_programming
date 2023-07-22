@@ -7,6 +7,10 @@
 class Rectangle(BaseGeometry):
     """
     A class rectangle and inherits from BaseGeometry.
+
+    params:
+    BaseGeometry (class): base class that increments each time
+    an instance is created
     """
     def __init__(self, width, height):
         """
