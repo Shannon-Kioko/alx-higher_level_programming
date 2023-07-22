@@ -7,6 +7,13 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
+    """
+    A class rectangle and inherits from BaseGeometry.
+
+    params:
+    BaseGeometry (class): base class that increments each time
+    an instance is created
+    """
     def __init__(self, width, height):
         """
         Initializes a Rectangle instance with private attributes W and H.
