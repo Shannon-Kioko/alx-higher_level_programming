@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 
 """
-11-square
+11-square inheriting from 9-rectangle
 """
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
+    """
+    Inherits from Rectangle class, with update of implementation of __str__
+    """
     def __init__(self, size):
         """
         Initializes a Square instance with a private attribute size.
