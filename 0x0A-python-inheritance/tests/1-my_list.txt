@@ -84,7 +84,7 @@ Test case 16: Valid input (multiple negative elements)
 Test case 17: Valid input (positive and negative zeros)
 >>> lst = my_list([0, -0, 0, -0])
 >>> lst.print_sorted()
-[-0, -0, 0, 0]
+[0, 0, 0, 0]
 
 Test case 18: Valid input (duplicate zeros)
 >>> lst = my_list([0, 0, 0, 0])
@@ -99,3 +99,4 @@ Test case 19: Valid input (mixed positive, negative, and zero)
 Test case 20: Valid input (large mixed positive, negative, and zero)
 >>> lst = my_list([10000, -1000, 0, -100000, 10000])
 >>> lst.print_sorted()
+[-100000, -1000, 0, 10000, 10000]
