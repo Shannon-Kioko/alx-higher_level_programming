@@ -8,6 +8,7 @@
 def add_new_attribute(obj, attribute, value):
     """
     adds a new attribute to an object if it’s possible
+
     Args:
         obj: the instance
         attribute: attribute to add to instance
