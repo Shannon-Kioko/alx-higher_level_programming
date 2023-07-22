@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-101-add_attribute
+101-add_attribute with function to add new attribute
 """
 
 
