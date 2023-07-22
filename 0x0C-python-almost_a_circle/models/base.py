@@ -16,9 +16,10 @@ class Base:
         Class constructor to initialize the object with an id.
 
         Parameters:
-        id (int, optional): If provided, it assigns the public instance attribute 'id' with this value.
-                            If not provided, it increments the __nb_objects and assigns the new value
-                            to the public instance attribute 'id'.
+        id (int, optional): If provided, assigns the public instance
+        attribute 'id' with this value.
+        If not, increments the __nb_objects and assigns the new value
+        to public instance attribute 'id'.
 
         Returns:
         None
