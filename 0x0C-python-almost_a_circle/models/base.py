@@ -2,6 +2,7 @@
 
 """ models/base.py base of the classes in this project directory """
 
+
 class Base:
     """
     This class will be the "base" of all other classes in this project.
