@@ -1,37 +1,63 @@
-Test Cases for BaseGeometry class
+# File: tests/base_geometry_test.txt
 
-1. Testing area() method when not implemented:
-    - Description: Calling the area() method without implementation should raise an Exception.
-    - Code:
-        geometry = BaseGeometry()
-        try:
-            geometry.area()
-        except Exception as e:
-            # Expected output: "area() is not implemented"
-            print(str(e))
+# Importing the BaseGeometry class from 6-base_geometry module.
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-2. Testing integer_validator() method with valid input:
-    - Description: Calling the integer_validator() method with a valid integer should not raise any exceptions.
-    - Code:
-        geometry = BaseGeometry()
-        try:
-            geometry.integer_validator("test", 10)
-            # Expected output: No exception raised
-        except Exception as e:
-            print("Unexpected exception:", str(e))
+# Test case 1: Test the area method (not implemented)
+>>> geometry = BaseGeometry()
+>>> geometry.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
 
-3. Testing integer_validator() method with invalid input:
-    - Description: Calling the integer_validator() method with a non-integer or a negative integer should raise TypeError or ValueError respectively.
-    - Code:
-        geometry = BaseGeometry()
-        try:
-            geometry.integer_validator("test", "invalid")
-        except TypeError as te:
-            # Expected output: "test must be an integer"
-            print(str(te))
-        
-        try:
-            geometry.integer_validator("test", -5)
-        except ValueError as ve:
-            # Expected output: "test must be greater than 0"
-            print(str(ve))
+# Test case 2: Test integer_validator with valid input (integer > 0)
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("width", 5)
+
+# Test case 3: Test integer_validator with valid input (integer == 1)
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("height", 1)
+
+# Test case 4: Test integer_validator with valid input (integer == 0)
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("radius", 0)
+
+# Test case 5: Test integer_validator with valid input (large integer)
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("length", 100000)
+
+# Test case 6: Test integer_validator with invalid input (float)
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("side", 3.14)
+Traceback (most recent call last):
+...
+TypeError: side must be an integer
+
+# Test case 7: Test integer_validator with invalid input (negative integer)
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("count", -5)
+Traceback (most recent call last):
+...
+ValueError: count must be greater than 0
+
+# Test case 8: Test integer_validator with invalid input (non-integer string)
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("quantity", "invalid")
+Traceback (most recent call last):
+...
+TypeError: quantity must be an integer
+
+# Test case 9: Test integer_validator with invalid input (empty string)
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("number", "")
+Traceback (most recent call last):
+...
+TypeError: number must be an integer
+
+# Test case 10: Test integer_validator with invalid input (None)
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("value", None)
+Traceback (most recent call last):
+...
+TypeError: value must be an integer
+
