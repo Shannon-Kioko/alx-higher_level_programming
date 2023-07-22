@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 8-rectangle based on 7-rectangle
 """
