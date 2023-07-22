@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-9-rectangle
+9-rectangle inheriting from 7-base_geometry
 """
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
