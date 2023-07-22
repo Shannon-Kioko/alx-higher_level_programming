@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """ models/rectangle.py with validators"""
 from models.base import Base
 
