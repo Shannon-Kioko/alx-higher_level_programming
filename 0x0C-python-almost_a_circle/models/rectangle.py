@@ -22,8 +22,12 @@ class Rectangle(Base):
     Parameters:
         width (int): Width of rectangle.
         height (int): Height of rectangle.
-        x (int, optional): x-coordinate of the rectangle's position. Default = 0.
-        y (int, optional): y-coordinate of the rectangle's position. Default = 0.
+        x (int, optional): x-coordinate of the rectangle's \
+        position. Default = 0.
+
+        y (int, optional): y-coordinate of the rectangle's \
+        position. Default = 0.
+
         id (int, optional): If provided, assigns public instance 
         attribute 'id' with this value.
         If not, increments the __nb_objects and assigns the new value
@@ -101,7 +105,8 @@ class Rectangle(Base):
 
     def display(self):
         """
-        Prints the Rectangle instance with the character '#' in stdout.
+        Prints the Rectangle instance with the \
+        character '#' in stdout.
         Accounting for x and y
 
         Returns:
@@ -121,24 +126,27 @@ class Rectangle(Base):
         Returns:
             str: The string representation of Rectangle instance.
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) \
+        {self.x}/{self.y} - {self.width}/{self.height}"
 
-    def update(self, *args):
+     def update(self, *args, **kwargs):
         """
-        Assigns arguments to each attr in this order: id, width, height, x, y.
+        Assigns key-value args to attributes.
 
         Parameters:
-            *args: A variable-length argument list. The order of arguments should be:
-                   1st argument - id attribute
-                   2nd argument - width attribute
-                   3rd argument - height attribute
-                   4th argument - x attribute
-                   5th argument - y attribute
+            *args: A variable-length argument list. If not empty,
+            the method only uses *args.
+
+            **kwargs: A variable-length keyworded argument list.
+            If *args is empty, the method uses **kwargs.
 
         Returns:
             None
         """
-        attributes = ['id', 'width', 'height', 'x', 'y']
-
-        for i, arg in enumerate(args,start=0):
-            setattr(self, attributes[i], arg)
+        if args:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
