@@ -7,6 +7,7 @@ Contains function thatreturns JSON representation of an obj
 
 import json
 
+
 def to_json_string(my_obj):
     """
     Convert an object to its JSON representation.

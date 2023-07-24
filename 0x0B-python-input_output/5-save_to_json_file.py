@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """
 5-save_to_json_file module
-Contains function that saves a python object to a text file using its JSON representation.
+Contains function that saves a python object to a text file using
+its JSON representation.
 """
 
 import json
+
 
 def save_to_json_file(my_obj, filename):
     """
@@ -12,7 +14,8 @@ def save_to_json_file(my_obj, filename):
 
     Args:
         my_obj: The Python object to be saved.
-        filename (str): The name of the text file to save the JSON representation.
+        filename (str): The name of the text file to save
+        the JSON representation.
 
     Returns:
         None

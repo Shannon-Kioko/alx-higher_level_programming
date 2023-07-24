@@ -6,6 +6,7 @@ Contains functions that returns an object represented by JSON string
 
 import json
 
+
 def from_json_string(my_str):
     """
     Convert a JSON string to a Python data structure (object).
