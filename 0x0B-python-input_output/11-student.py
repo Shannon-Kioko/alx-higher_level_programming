@@ -39,7 +39,7 @@ class Student:
             the Student instance.
         """
         if attrs is None:
-            attrs = [attr_name for attr_name in dir(self) \
+            attrs = [attr_name for attr_name in dir(self)
                      if not attr_name.startswith('__')]
         description = {}
         for attr_name in attrs:
