@@ -30,7 +30,7 @@ def print_metrics(total_size, status_count):
     total_size (int): The total file size computed so far.
     status_count (dict): A dictionary containing the counts of different
     status codes encountered.
- 
+
     Returns:
     None
     """
