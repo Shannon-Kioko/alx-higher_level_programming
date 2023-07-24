@@ -5,12 +5,16 @@ Contains function that appends a string at the end of a text file (UTF-8)
 and returns the number of characters added.
 
 """
+
+
 def append_write(filename="", text=""):
     """
-    Append a string at the end of a text file (UTF-8) and return the number of characters added.
+    Append a string at the end of a text file (UTF-8) and return
+    the number of characters added.
 
     Args:
-        filename (str, optional): The name of the text file to append to. Defaults to "".
+        filename (str, optional): The name of the text file
+        to append to. Defaults to "".
         text (str): The string to append to the file.
 
     Returns:
@@ -24,4 +28,3 @@ def append_write(filename="", text=""):
     except Exception as e:
         print(f"An error occurred: {e}")
         return 0
-  
