@@ -15,8 +15,10 @@ class Student:
         age (int): The age of the student.
 
     Methods:
-        to_json(attrs=None): Retrieves a dictionary representation of a Student instance.
-        reload_from_json(json): Replaces all attributes of the Student instance.
+        to_json(attrs=None): Retrieves a dictionary representation of
+        a Student instance.
+        reload_from_json(json): Replaces all attributes of the
+        Student instance.
     """
 
     def __init__(self, first_name, last_name, age):
@@ -29,13 +31,16 @@ class Student:
         Get the dictionary representation of a Student instance.
 
         Args:
-            attrs (list, optional): A list of attribute names to retrieve. Defaults to None.
+            attrs (list, optional): A list of attribute names
+            to retrieve. Defaults to None.
 
         Returns:
-            dict: A dictionary containing the specified attributes of the Student instance.
+            dict: A dictionary containing the specified attributes of
+            the Student instance.
         """
         if attrs is None:
-            attrs = [attr_name for attr_name in dir(self) if not attr_name.startswith('__')]
+            attrs = [attr_name for attr_name in dir(self) \
+                     if not attr_name.startswith('__')]
         description = {}
         for attr_name in attrs:
             if hasattr(self, attr_name):
@@ -46,10 +51,12 @@ class Student:
 
     def reload_from_json(self, json):
         """
-        Replace all attributes of the Student instance with the provided JSON dictionary.
+        Replace all attributes of the Student instance with the
+        provided JSON dictionary.
 
         Args:
-            json (dict): A dictionary with attribute names as keys and corresponding values.
+            json (dict): A dictionary with attribute names
+            as keys and corresponding values.
 
         Returns:
             None
