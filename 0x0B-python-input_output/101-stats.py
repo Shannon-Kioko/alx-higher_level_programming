@@ -22,32 +22,32 @@ import sys
 from collections import defaultdict
 
 def print_metrics(total_size, status_count):
-  """
+    """
     Print the computed metrics.
-
+    
     Args:
-        total_size (int): The total file size computed so far.
-        status_count (dict): A dictionary containing the counts of different
-        status codes encountered.
-
+    total_size (int): The total file size computed so far.
+    status_count (dict): A dictionary containing the counts of different
+    status codes encountered.
+    
     Returns:
-        None
+    None
     """
     print(f"Total file size: {total_size}")
     for status_code in sorted(status_count.keys()):
         print(f"{status_code}: {status_count[status_code]}")
 
 def parse_line(line):
-  """
+    """
     Parse a line of input and extract the status code and file size.
-
+    
     Args:
-        line (str): A line of input in the specified format.
-
+    line (str): A line of input in the specified format.
+    
     Returns:
-        tuple or None: A tuple containing the status code and file size if
-        successfully parsed,
-                       otherwise, returns (None, None).
+    tuple or None: A tuple containing the status code and file size if
+    successfully parsed,
+                 otherwise, returns (None, None).
     """
     try:
         _, _, _, status_code, file_size = line.strip().split(" ")
@@ -57,11 +57,11 @@ def parse_line(line):
 
 def main():
 
-     """
+    """
     Read standard input (stdin) line by line and compute metrics.
-
+    
     Returns:
-        None
+    None
     """
     total_size = 0
     status_count = defaultdict(int)
@@ -74,10 +74,9 @@ def main():
                 total_size += file_size
                 status_count[status_code] += 1
                 line_count += 1
-
+        
             if line_count == 10:
-                print_metrics(total_size, status_count)
-                line_count = 0
-
+            print_metrics(total_size, status_count)
+            line_count = 0
     except KeyboardInterrupt:
         print_metrics(total_size, status_count)
