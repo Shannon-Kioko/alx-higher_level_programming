@@ -7,7 +7,8 @@ Script that reads stdin line by line and computes metrics:
 
 def append_after(filename="", search_string="", new_string=""):
     """
-    Append a new string after the first occurrence of a search string in a file.
+    Append a new string after the first occurrence of a search string
+    in a file.
 
     Args:
         filename (str): The name of the file to modify.
