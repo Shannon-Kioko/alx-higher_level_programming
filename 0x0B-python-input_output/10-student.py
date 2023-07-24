@@ -37,12 +37,12 @@ class Student:
             attributes of the Student instance.
         """
         if attrs is None:
-            attrs = [attr_name for attr_name in dir(self) \
+            attrs = [attr_name for attr_name in dir(self)
             if not attr_name.startswith('__')]
-        description = {}
-        for attr_name in attrs:
-            if hasattr(self, attr_name):
-                attr_value = getattr(self, attr_name)
-                if type(attr_value) in [str, int]:
-                    description[attr_name] = attr_value
-        return description
+                description = {}
+                for attr_name in attrs:
+                    if hasattr(self, attr_name):
+                        attr_value = getattr(self, attr_name)
+                        if type(attr_value) in [str, int]:
+                            description[attr_name] = attr_value
+                return description
