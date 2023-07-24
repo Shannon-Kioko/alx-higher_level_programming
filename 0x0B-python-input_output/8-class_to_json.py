@@ -2,14 +2,16 @@
 
 """
 8-class_to_json module
-Contains function that creates a function that returns the dictionary description
+Contains function that creates a function that returns the
+dictionary description
 with a simple data structure suitable for JSON serialization of an object
 """
 
 
 def class_to_json(obj):
     """
-    Get the dictionary description of an object with simple data structure for JSON serialization.
+    Get the dictionary description of an object with simple data
+    structure for JSON serialization.
 
     Args:
         obj: An instance of a Class with serializable attributes.
