@@ -9,37 +9,29 @@ of the Student instance
 
 
 class Student:
-    """
-    A class that defines a student.
-
-    Attributes:
-        first_name (str): The first name of the student.
-        last_name (str): The last name of the student.
-        age (int): The age of the student.
-
-    Methods:
-        to_json(): Retrieves a dictionary representation of a Student instance.
-    """
-
     def __init__(self, first_name, last_name, age):
+        """
+        Initializes a Student instance with first_name, last_name, and age.
+
+        Args:
+            first_name (str): The first name of the student.
+            last_name (str): The last name of the student.
+            age (int): The age of the student.
+        """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-
+        
     def to_json(self):
         """
-        Get the dictionary description of an object with simple data
-        structure for JSON serialization.
-
-        Args:
-        obj: An instance of a Class with serializable attributes.
+        Retrieves a dictionary representation of a Student instance.
 
         Returns:
-        dict: A dictionary representation of the object's attributes.
+            dict: The dictionary representation with a simple data structure for JSON serialization.
         """
-        description = {}
-        for attr_name in dir(obj):
-            attr_value = getattr(obj, attr_name)
-        if type(attr_value) in [list, dict, str, int, bool]:
-            description[attr_name] = attr_value
-        return description
+        serializable_attributes = {}
+        for key, value in self.__dict__.items():
+            if isinstance(value, (list, dict, str, int, bool)):
+                serializable_attributes[key] = value
+
+        return serializable_attributes
