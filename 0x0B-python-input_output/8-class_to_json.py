@@ -10,18 +10,20 @@ with a simple data structure suitable for JSON serialization of an object
 
 def class_to_json(obj):
     """
-    Get the dictionary description of an object with simple data
-    structure for JSON serialization.
+    Returns the dictionary description with simple data structure for JSON serialization of an object.
 
     Args:
-        obj: An instance of a Class with serializable attributes.
+        obj: An instance of a Class.
 
     Returns:
-        dict: A dictionary representation of the object's attributes.
+        dict: The dictionary description with a simple data structure for JSON serialization.
     """
-    description = {}
-    for attr_name in dir(obj):
-        attr_value = getattr(obj, attr_name)
-        if type(attr_value) in [list, dict, str, int, bool]:
-            description[attr_name] = attr_value
-    return description
+    if not hasattr(obj, "__dict__"):
+        raise TypeError("Object must be an instance of a Class")
+
+    serializable_attributes = {}
+    for key, value in obj.__dict__.items():
+        if isinstance(value, (list, dict, str, int, bool)):
+            serializable_attributes[key] = value
+
+    return serializable_attributes
