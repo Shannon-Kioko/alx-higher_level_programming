@@ -39,3 +39,15 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer
+
+#Test case 9: Adding a nan and an integer.
+>>> add_integer(float("nan"), 4)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
+#Test case 10: Adding an integer and a nan.
+>>> add_integer(1, float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
