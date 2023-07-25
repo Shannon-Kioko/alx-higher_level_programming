@@ -10,13 +10,15 @@ with a simple data structure suitable for JSON serialization of an object
 
 def class_to_json(obj):
     """
-    Returns the dictionary description with simple data structure for JSON serialization of an object.
+    Returns the dictionary description with simple data structure
+    for JSON serialization of an object.
 
     Args:
         obj: An instance of a Class.
 
     Returns:
-        dict: The dictionary description with a simple data structure for JSON serialization.
+        dict: The dictionary description with a simple data
+        structure for JSON serialization.
     """
     if not hasattr(obj, "__dict__"):
         raise TypeError("Object must be an instance of a Class")
