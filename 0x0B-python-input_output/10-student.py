@@ -24,25 +24,25 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs=None):
-        """
-        Get the dictionary representation of a Student instance.
+   def to_json(self, attrs=None):
+    """
+    Get the dictionary representation of a Student instance.
 
-        Args:
-            attrs (list, optional): A list of attribute
-            names to retrieve. Defaults to None.
+    Args:
+        attrs (list, optional): A list of attribute
+        names to retrieve. Defaults to None.
 
-        Returns:
-            dict: A dictionary containing the specified
-            attributes of the Student instance.
-        """
-        if attrs is None:
-            attrs = [attr_name for attr_name in dir(self)
-                     if not attr_name.startswith('__')]
-            description = {}
-            for attr_name in attrs:
-                if hasattr(self, attr_name):
-                    attr_value = getattr(self, attr_name)
-                    if type(attr_value) in [str, int]:
-                        description[attr_name] = attr_value
-            return description
+    Returns:
+        dict: A dictionary containing the specified
+        attributes of the Student instance.
+    """
+    if attrs is None:
+        attrs = [attr_name for attr_name in dir(self)
+                 if not attr_name.startswith('__')]
+    description = {}
+    for attr_name in attrs:
+        if hasattr(self, attr_name):
+            attr_value = getattr(self, attr_name)
+            if type(attr_value) in [str, int]:
+                description[attr_name] = attr_value
+    return description
