@@ -6,43 +6,35 @@ Class contains public method to_json
 
 
 class Student:
-    """
-    A class that defines a student.
-
-    Attributes:
-        first_name (str): The first name of the student.
-        last_name (str): The last name of the student.
-        age (int): The age of the student.
-
-    Methods:
-        to_json(attrs=None): Retrieves a dictionary
-        representation of a Student instance.
-    """
-
     def __init__(self, first_name, last_name, age):
+        """
+        Initializes a Student instance with first_name, last_name, and age.
+
+        Args:
+            first_name (str): The first name of the student.
+            last_name (str): The last name of the student.
+            age (int): The age of the student.
+        """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
-   def to_json(self, attrs=None):
-    """
-    Get the dictionary representation of a Student instance.
+    def to_json(self, attrs=None):
+        """
+        Retrieves a dictionary representation of a Student instance.
 
-    Args:
-        attrs (list, optional): A list of attribute
-        names to retrieve. Defaults to None.
+        Args:
+            attrs (list of strings, optional): Only attribute names contained in this list must be retrieved.
 
-    Returns:
-        dict: A dictionary containing the specified
-        attributes of the Student instance.
-    """
-    if attrs is None:
-        attrs = [attr_name for attr_name in dir(self)
-                 if not attr_name.startswith('__')]
-    description = {}
-    for attr_name in attrs:
-        if hasattr(self, attr_name):
-            attr_value = getattr(self, attr_name)
-            if type(attr_value) in [str, int]:
-                description[attr_name] = attr_value
-    return description
+        Returns:
+            dict: The dictionary representation with a simple data structure for JSON serialization.
+        """
+        if attrs is None:
+            return self.__dict__
+
+        serializable_attributes = {}
+        for key in attrs:
+            if key in self.__dict__ and isinstance(self.__dict__[key], (list, dict, str, int, bool)):
+                serializable_attributes[key] = self.__dict__[key]
+
+        return serializable_attributes
