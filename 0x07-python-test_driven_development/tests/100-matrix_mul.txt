@@ -1,0 +1,46 @@
+# matrix_mul_doctests.txt
+
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+[[19, 22], [43, 50]]
+
+>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[7], [8], [9]])
+[[50], [122]]
+
+>>> matrix_mul([[1.5, 2.8], [3.2, 4.7]], [[5.1, 6.3], [7.2, 8.4]])
+[[19.35, 23.69], [43.68, 53.62]]
+
+>>> matrix_mul([[1.5, 2.8], [3.2, 4.7]], [[5.1, 6.3], [7.2, "8.4"]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a should contain only integers or floats or m_b should contain only integers or floats
+
+>>> matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty or m_b can't be empty
+
+>>> matrix_mul([], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty or m_b can't be empty
+
+>>> matrix_mul([1, 2, 3], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list of lists or m_b must be a list of lists
+
+>>> matrix_mul([[1, 2], [3, 4]], "string")
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list or m_b must be a list
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [4, 5]])
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_a must be of the same size or each row of m_b must be of the same size
+
+>>> matrix_mul([[1, 2], [3, 4]], [[5, 6, 7], [8, 9, 10]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a and m_b can't be multiplied
