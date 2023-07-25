@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
 101-stats module
 This script reads stdin line by line and computes metrics based on the
