@@ -73,35 +73,32 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 
 # Test case 12: With list item input
 >>> geometry = BaseGeometry()
->>> geometry.integer_validator(“age”, [3])
+>>> geometry.integer_validator("age", [3])
 Traceback (most recent call last):
 ...
-SyntaxError: invalid character in identifier
+TypeError: age must be an integer
 
 # Test case 13: With list item input
 >>> geometry = BaseGeometry()
->>> geometry.integer_validator(“age”, {3, 4})
+>>> geometry.integer_validator("age", {3, 4})
 Traceback (most recent call last):
 ...
-SyntaxError: invalid character in identifier
+TypeError: age must be an integer
 
-# Test case 14: With list item input
+# Test case 14: With invalid item input
 >>> geometry = BaseGeometry()
->>> geometry.integer_validator(“age”, (4,))
+>>> geometry.integer_validator("age", (4,))
 Traceback (most recent call last):
 ...
-SyntaxError: invalid character in identifier
+TypeError: age must be an integer
 
 # Test case 14: With bool input
 >>> geometry = BaseGeometry()
->>> geometry.integer_validator(“age”, True)
-Traceback (most recent call last):
-...
-SyntaxError: invalid character in identifier
+>>> geometry.integer_validator("age", True)
 
-# Test case 14: With boo input
+# Test case 14: With 1 missing input
 >>> geometry = BaseGeometry()
->>> geometry.integer_validator(“age”)
+>>> geometry.integer_validator("age")
 Traceback (most recent call last):
 ...
-SyntaxError: invalid character in identifier
+TypeError: integer_validator() missing 1 required positional argument: 'value'
