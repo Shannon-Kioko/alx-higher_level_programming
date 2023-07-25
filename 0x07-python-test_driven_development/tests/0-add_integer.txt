@@ -51,3 +51,9 @@ ValueError: cannot convert float NaN to integer
 Traceback (most recent call last):
 ...
 ValueError: cannot convert float NaN to integer
+
+#Test case 11: Adding a positive undefined number and an integer.
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
