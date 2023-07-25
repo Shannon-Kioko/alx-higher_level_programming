@@ -36,8 +36,8 @@ class Student:
 
         serializable_attributes = {}
         for key in attrs:
-            if key in self.__dict__ and isinstance(self.__dict__[key], \
-                                    (list, dict, str, int, bool)):
+            if key in self.__dict__ and isinstance(self.__dict__[key],
+                                                   (list, dict, str, int, bool)):
                 serializable_attributes[key] = self.__dict__[key]
 
         return serializable_attributes
