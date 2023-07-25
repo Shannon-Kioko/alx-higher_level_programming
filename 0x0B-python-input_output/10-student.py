@@ -24,17 +24,20 @@ class Student:
         Retrieves a dictionary representation of a Student instance.
 
         Args:
-            attrs (list of strings, optional): Only attribute names contained in this list must be retrieved.
+            attrs (list of strings, optional): Only attribute names contained
+            in this list must be retrieved.
 
         Returns:
-            dict: The dictionary representation with a simple data structure for JSON serialization.
+            dict: The dictionary representation with a simple data structure
+            for JSON serialization.
         """
         if attrs is None:
             return self.__dict__
 
         serializable_attributes = {}
         for key in attrs:
-            if key in self.__dict__ and isinstance(self.__dict__[key], (list, dict, str, int, bool)):
+            if key in self.__dict__ and isinstance(self.__dict__[key], \
+                                    (list, dict, str, int, bool)):
                 serializable_attributes[key] = self.__dict__[key]
 
         return serializable_attributes
