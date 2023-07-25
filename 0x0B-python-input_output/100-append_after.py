@@ -26,5 +26,6 @@ def append_after(filename="", search_string="", new_string=""):
     if index != -1:
         index += len(search_string)
         new_content = content[:index] + new_string + content[index:]
+
         with open(filename, 'w') as file:
             file.write(new_content)
