@@ -69,7 +69,13 @@ Traceback (most recent call last):
     ...
 TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
-#Test case 9: Passing one argument to matrix_divided().
+#Test case 9: float(inf)
+>>> matrix = [[2, 4], [6, 8]]
+>>> div = float('inf')
+>>> matrix_divided(matrix, div)
+[[0.0, 0.0], [0.0, 0.0]]
+
+#Test case 10: Passing one argument to matrix_divided().
 >>> matrix = [[1, 2, 3], [4, 5, 6]]
 >>> matrix_divided(matrix)
 Traceback (most recent call last):
