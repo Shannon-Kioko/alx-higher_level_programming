@@ -8,6 +8,7 @@
 def add_new_attribute(obj, attribute, value):
     """
     Adds a new attribute to an object if it’s possible
+
     Args:
         object (__main__.MyClass): name of the object.
         attr_name ('str): name of the attribute.
