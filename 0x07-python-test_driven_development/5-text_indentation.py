@@ -17,12 +17,8 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    punctuation_chars = set('.?:')
-    line = ""
-    for char in text:
-        line += char
-        if char in punctuation_chars:
-            print(line.strip())
-            line = ""
-    if line:
-        print(line.strip())
+    for delim in ".:?":
+        text = (delim + "\n\n").join(
+            [line.strip(" ") for line in text.split(delim)])
+
+    print(text, end="")
