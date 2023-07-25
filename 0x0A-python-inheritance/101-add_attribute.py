@@ -5,9 +5,8 @@
 """
 
 
-def add_new_attribute(obj, attribute, value):
-    """
-    Adds a new attribute to an object if it’s possible
+def add_attribute(object, attr_name, value):
+    """Adds a new attribute to an object if it's possible.
 
     Args:
         object (__main__.MyClass): name of the object.
@@ -17,6 +16,9 @@ def add_new_attribute(obj, attribute, value):
     Raises:
         TypeError:  if the object can’t have new attribute.
     """
-    if not hasattr(obj, "__dict__") and not hasattr(obj, "__slots__"):
+    # print("object type ---> {}".format(type(object)))
+    # print("attr_name type ---> {}".format(type(attr_name)))
+    # print("value type ---> {}".format(type(value)))
+    if not hasattr(object, "__dict__"):
         raise TypeError("can't add new attribute")
-    setattr(obj, attribute, value)
+    setattr(object, attr_name, value)
