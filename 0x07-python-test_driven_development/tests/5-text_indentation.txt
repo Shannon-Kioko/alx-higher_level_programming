@@ -1,6 +1,7 @@
 # File: 5-text_indentation.txt
 
-# Test case 1: Basic example
+# Test case 1: Basic example amd importation
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 >>> text_indentation("Hello. How are you? I am good.")
 Hello
 How are you
