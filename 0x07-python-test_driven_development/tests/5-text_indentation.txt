@@ -4,14 +4,20 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 >>> text_indentation("Hello. How are you? I am good.")
 Hello
+<BLANKLINE>
 How are you
+<BLANKLINE>
 I am good
+<BLANKLINE>
 
 # Test case 2: Example with multiple punctuation characters
 >>> text_indentation("This is a test: will it work? Maybe!")
 This is a test
+<BLANKLINE>
 will it work
+<BLANKLINE>
 Maybe
+<BLANKLINE>
 
 # Test case 3: No punctuation in the text
 >>> text_indentation("No punctuation here")
