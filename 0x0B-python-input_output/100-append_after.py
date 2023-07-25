@@ -7,28 +7,21 @@ Script that reads stdin line by line and computes metrics:
 
 def append_after(filename="", search_string="", new_string=""):
     """
-    Append a new string after the first occurrence of a search string
-    in a file.
+    Inserts a line of text to a file after each line containing a specific string.
 
     Args:
-        filename (str): The name of the file to modify.
-        search_string (str): The string to search for in the file.
-        new_string (str): The string to append after the first occurrence
-        of the search string.
+        filename (str, optional): The name of the file to be modified (default is an empty string).
+        search_string (str, optional): The specific string to search for in each line (default is an empty string).
+        new_string (str, optional): The line of text to be inserted after each line containing the search string (default is an empty string).
 
     Returns:
-        None
+        None.
     """
-    with open(filename, 'r') as file:
-        content = file.read()
+    with open(filename, mode='r') as file:
+        lines = file.readlines()
 
-    index = content.find(search_string)
-    if index != -1:
-        if index == 0:
-            new_content = new_string + content[index + len(search_string):]
-        else:
-            index += len(search_string)
-            new_content = content[:index] + new_string + content[index:]
-
-        with open(filename, 'w') as file:
-            file.write(new_content)
+    with open(filename, mode='w') as file:
+        for line in lines:
+            file.write(line)
+            if search_string in line:
+                file.write(new_string + '\n')
