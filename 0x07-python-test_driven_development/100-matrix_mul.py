@@ -30,7 +30,7 @@ def matrix_mul(m_a, m_b):
     size_err = "each row of {} must be of the same size"
     listolist_err = "{} must be a list of lists"
     mty_err = "{} can't be empty"
-    value_err = "{} and {} can't be multiplied"  
+    value_err = "{} and {} can't be multiplied"
     type_err = "{} should contain only integers or floats"
 
     if not isinstance(m_a, list) or not isinstance(m_b, list):
