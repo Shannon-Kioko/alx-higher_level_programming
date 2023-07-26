@@ -27,7 +27,8 @@ def matrix_mul(m_a, m_b):
                     If m_a and m_b can't be multiplied.
     """
     if not isinstance(m_a, list) or not isinstance(m_b, list):
-        raise TypeError("m_a must be a list or m_b must be a list")
+        string = "m_a" if not isinstance(m_a, list) else "m_b"
+        raise TypeError("{} must be a list".format(string))
 
     if not all(isinstance(row, list) for row in m_a) or not \
            all(isinstance(row, list) for row in m_b):
