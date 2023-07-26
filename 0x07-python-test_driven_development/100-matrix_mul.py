@@ -62,7 +62,7 @@ def matrix_mul(m_a, m_b):
                 raise TypeError(type_err.format('m_b'))
 
     len_m_a = len(m_a[0])
-    len_m_b = len(m_b[0])
+    len_m_b = len(m_b[0][0])
 
     for element in m_a:
         if len_m_a != len(element):
