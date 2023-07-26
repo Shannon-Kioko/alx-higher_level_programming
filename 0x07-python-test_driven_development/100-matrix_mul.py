@@ -39,11 +39,11 @@ def matrix_mul(m_a, m_b):
 
     for element in m_a:
         if not isinstance(element, list):
-            raise TypeError(lists_err.format('m_a'))
+            raise TypeError(listolist_err.format('m_a'))
 
     for element in m_b:
         if not isinstance(element, list):
-            raise TypeError(lists_err.format('m_b'))
+            raise TypeError(listolist_err.format('m_b'))
 
     if len(m_a) == 0 or (len(m_a) == 1 and len(m_a[0]) == 0):
         raise ValueError(empty_err.format('m_a'))
