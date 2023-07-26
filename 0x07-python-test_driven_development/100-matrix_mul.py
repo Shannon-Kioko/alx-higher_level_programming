@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+Module containing matrix_mul function to mutlipy matrices to each other
+"""
 def matrix_mul(m_a, m_b):
     """
     Multiplies two matrices and return the result.
