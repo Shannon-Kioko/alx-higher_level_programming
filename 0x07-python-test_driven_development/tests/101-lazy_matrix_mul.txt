@@ -1,0 +1,34 @@
+# doctests_lazy_matrix_mul.txt
+
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[5, 6], [7, 8]]
+>>> lazy_matrix_mul(m_a, m_b)
+array([[19, 22],
+       [43, 50]])
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = [[7], [8], [9]]
+>>> lazy_matrix_mul(m_b, m_b)
+Traceback (most recent call last):
+...
+ValueError: shapes (3,1) and (3,1) not aligned: 1 (dim 1) != 3 (dim 0)
+
+>>> m_a = [[1.5, 2.8], [3.2, 4.7]]
+>>> m_b = [[5.1, 6.3], [7.2, 8.4]]
+>>> lazy_matrix_mul(m_a, m_b)
+array([[27.81, 32.97],
+       [50.16, 59.64]])
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[5, 6, 7], [8, 9, 10]]
+>>> lazy_matrix_mul(m_a, m_b)
+array([[21, 24, 27],
+       [47, 54, 61]])
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[5, 6], [7, "8"]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: invalid data type for einsum
