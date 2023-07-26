@@ -46,10 +46,10 @@ def matrix_mul(m_a, m_b):
             raise TypeError(listolist_err.format('m_b'))
 
     if len(m_a) == 0 or (len(m_a) == 1 and len(m_a[0]) == 0):
-        raise ValueError(empty_err.format('m_a'))
+        raise ValueError(mty_err.format('m_a'))
 
     if len(m_b) == 0 or (len(m_b) == 1 and len(m_b[0]) == 0):
-        raise ValueError(empty_err.format('m_b'))
+        raise ValueError(mty_err.format('m_b'))
 
     for element in m_a:
         for item in element:
