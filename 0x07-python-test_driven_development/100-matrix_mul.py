@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """
 Module containing matrix_mul function to mutlipy matrices to each other
+
+Attributes:
+    m_a (matrix)
+    m_b (matrix)
 """
 def matrix_mul(m_a, m_b):
     """
