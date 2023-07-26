@@ -3,20 +3,20 @@
 # Test case 1: Basic example amd importation
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 >>> text_indentation("Hello. How are you? I am good.")
-Hello
+Hello.
 <BLANKLINE>
-How are you
+How are you?
 <BLANKLINE>
-I am good
+I am good.
 <BLANKLINE>
 
 # Test case 2: Example with multiple punctuation characters
 >>> text_indentation("This is a test: will it work? Maybe!")
-This is a test
+This is a test:
 <BLANKLINE>
-will it work
+will it work?
 <BLANKLINE>
-Maybe
+Maybe!
 <BLANKLINE>
 
 # Test case 3: No punctuation in the text
@@ -31,13 +31,17 @@ TypeError: text must be a string
 
 # Test case 5: Example with multiple spaces after punctuation
 >>> text_indentation("Spaces after .   ?  :  ")
-Spaces after
+Spaces after.
+<BLANKLINE>
 ?
+<BLANKLINE>
 :
+<BLANKLINE>
 
 # Test case 6: Example with leading and trailing spaces
 >>> text_indentation("  Leading and trailing spaces.   ")
 Leading and trailing spaces
+<BLANKLINE>
 
 # Test case 7: Example with only one character
 >>> text_indentation(".")
