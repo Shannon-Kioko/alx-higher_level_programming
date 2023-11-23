@@ -18,10 +18,10 @@ if __name__ == "__main__":
     # ~connection to the db
     cur = db.cursor()
 
-    # To execute queries, use the cursor obj and call execute
-    cur.execute(
-        "SELECT * FROM states WHERE name LIKE BINARY {} ORDER BY id ASC"
-        .format(argv[4]))
+    #To execute queries, use the cursor obj and call execute
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC"
+    cur.execute(query.format(argv[4]))
+
     rows = cur.fetchall()
     for row in rows:
         print(row)
