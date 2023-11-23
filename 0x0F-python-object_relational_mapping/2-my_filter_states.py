@@ -1,30 +1,41 @@
 #!/usr/bin/python3
 """
-Module akes in an argument and displays all values in the states table
-of hbtn_0e_0_usa where name matches the argument.
+This module displays all values in the states table of hbtn_0e_0_usa,
+where name matches the argument.
 """
-from sys import argv
+
 import MySQLdb
+from sys import argv
 
 if __name__ == "__main__":
+    # Check if the correct number of arguments is provided
+    if len(argv) != 5:
+        print(
+            "Usage: {} username password database_name state_name".format(
+                argv[0]
+            )
+        )
+        exit(1)
 
-    # Connnecting to the db
+    # Connect to the database
     db = MySQLdb.connect(
-        host="localhost", port=3306,
-        user=argv[1], passwd=argv[2], db=argv[3])
+        host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3]
+    )
 
-    # getting a cursor->gives ability to havem multiple separate working
-    # environments through the same
-    # ~connection to the db
+    # Creating a cursor
     cur = db.cursor()
 
-    #To execute queries, use the cursor obj and call execute
+    # Execute SQL query to select states with given name
     query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC"
     cur.execute(query.format(argv[4]))
 
+    # Fetch all the rows
     rows = cur.fetchall()
+
+    # Print the rows
     for row in rows:
         print(row)
 
+    # Close cursor and database connection
     cur.close()
     db.close()
