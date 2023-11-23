@@ -8,10 +8,13 @@ import MySQLdb
 
 if __name__ == "__main__":
 
-    #Connnecting to the db
-    db = MySQLdb.connect(host="localhost", port=3306,user=argv[1], passwd=argv[2], db=argv[3])
+    # Connnecting to the db
+    db = MySQLdb.connect(
+        host="localhost", port=3306,
+        user=argv[1], passwd=argv[2], db=argv[3])
 
-    # getting a cursor->gives ability to havem multiple separate working environments through the same
+    # getting a cursor->gives ability to havem multiple separate working
+    # environments through the same
     # ~connection to the db
     cur = db.cursor()
 
