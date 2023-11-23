@@ -23,6 +23,6 @@ if __name__ == "__main__":
 
     for the_city in session.query(City).order_by(City.id):
             print("{}: {} -> {}".format(the_city.id, the_city.name,
-                  the_city.state.name))
+                                        the_city.state.name))
 
     session.close()
