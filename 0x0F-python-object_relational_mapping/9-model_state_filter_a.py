@@ -24,7 +24,7 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-     # Query and print State objects containing the letter 'a'
+    # Query and print State objects containing the letter 'a'
     statess = (
         session.query(State)
         .filter(State.name.like("%a%"))

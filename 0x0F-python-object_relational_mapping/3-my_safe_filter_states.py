@@ -29,7 +29,7 @@ if __name__ == "__main__":
     # To execute queries, use the cursor obj and call execute
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cur.execute(query, (argv[4],))
-    
+
     rows = cur.fetchall()
     for row in rows:
         print(row)

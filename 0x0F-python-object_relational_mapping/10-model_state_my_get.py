@@ -17,7 +17,7 @@ if __name__ == "__main__":
             "Usage: {} username password database_name state_name".format(
                 argv[0]
             )
-    )
+            )
         exit(1)
     # create an engine
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
