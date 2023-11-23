@@ -22,7 +22,7 @@ if __name__ == "__main__":
     session = Session()
 
     for the_city in session.query(City).order_by(City.id):
-            print("{}: {} -> {}".format(the_city.id, the_city.name,
+        print("{}: {} -> {}".format(the_city.id, the_city.name,
                                         the_city.state.name))
 
     session.close()
