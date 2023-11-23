@@ -7,6 +7,10 @@ from sys import argv
 import MySQLdb
 
 if __name__ == "__main__":
+    # Check if the correct number of arguments is provided
+    if len(argv) != 4:
+        print("Usage: {} username password database_name".format(argv[0]))
+        exit(1)
 
     # Connnecting to the db
     db = MySQLdb.connect(
@@ -19,7 +23,13 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # To execute queries, use the cursor obj and call execute
-    query = "SELECT * FROM cities ORDER BY id ASC"
+    query = """
+        SELECT cities.id, cities.name, states.name
+        FROM cities
+        LEFT JOIN states ON cities.state_id = states.id
+        ORDER BY cities.id ASC
+    """
+    
     cur.execute(query)
     rows = cur.fetchall()
     for row in rows:

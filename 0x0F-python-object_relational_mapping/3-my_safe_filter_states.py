@@ -7,6 +7,14 @@ from sys import argv
 import MySQLdb
 
 if __name__ == "__main__":
+    # Check if the correct number of arguments is provided
+    if len(argv) != 5:
+        print(
+            "Usage: {} username password database_name state_name".format(
+                argv[0]
+            )
+        )
+        exit(1)
 
     # Connnecting to the db
     db = MySQLdb.connect(
@@ -20,7 +28,8 @@ if __name__ == "__main__":
 
     # To execute queries, use the cursor obj and call execute
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cur.execute(query, (argv[4], ))
+    cur.execute(query, (argv[4],))
+    
     rows = cur.fetchall()
     for row in rows:
         print(row)
