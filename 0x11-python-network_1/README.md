@@ -51,7 +51,7 @@ Write a Python script that takes in a URL, sends a request to the URL and displa
 
 - You have to manage `urllib.error.HTTPError` exceptions and print: `Error code`: followed by the HTTP status code
 
-[4. What's my status? #1](4-hbtn_status.py)
+### [4. What's my status? #1](4-hbtn_status.py)
 Write a Python script that fetches https://alx-intranet.hbtn.io/status
 
 - You must use the package `requests`
@@ -66,7 +66,7 @@ Write a Python script that takes in a URL and an email address, sends a `POST` r
 
 - The email must be sent in the variable `email`
 
-[7. Error code #1](7-error_code.py)
+### [7. Error code #1](7-error_code.py)
 Write a Python script that takes in a URL, sends a request to the URL and displays the body of the response.
 
 - If the HTTP status code is greater than or equal to 400, print: `Error code:` followed by the value of the HTTP status code
@@ -92,7 +92,7 @@ Write a Python script that takes your GitHub credentials (username and password)
 - The first argument will be your `username`
 - The second argument will be your `password` (in your case, a [personal access token as password](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens))
 
-[10. Time for an interview!](100-github_commits.py)
+### [10. Time for an interview!](100-github_commits.py)
 The Holberton School staff evaluates candidates applying for a back-end position with multiple technical challenges, like this one:
 
 ```bash
