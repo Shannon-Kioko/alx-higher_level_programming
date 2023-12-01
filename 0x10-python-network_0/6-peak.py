@@ -20,8 +20,11 @@ Args:
     list_of_integers (list): A list of integers.
 
 Returns:
-    int or None: The peak(s) found in the list. Returns None if the list is empty.
+    int or None: The peak(s) found in the list.
+    Returns None if the list is empty.
 """
+
+
 def find_peak(list_of_integers):
     list_ = list_of_integers
 
