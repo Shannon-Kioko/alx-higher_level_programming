@@ -19,7 +19,4 @@ class Rectangle {
     }
   }
 }
-module.exports = class Rectangle { };
-
-const r1 = new Rectangle(3, 8);
-r1.print();
+module.exports = Rectangle;
