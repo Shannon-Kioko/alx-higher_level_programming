@@ -14,8 +14,8 @@ class Square extends Square1 {
     }
   }
 }
-const s1 = new Square(4);
-s1.charPrint();
+// const s1 = new Square(4);
+// s1.charPrint();
 
-s1.charPrint('Z');
+// s1.charPrint('Z');
 module.exports = Square;
