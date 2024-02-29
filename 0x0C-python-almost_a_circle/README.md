@@ -1,4 +1,4 @@
-## Almost a circle
+## Almost a Circle
 The tasks in this project help review everything about Python
 From:
 * Import
