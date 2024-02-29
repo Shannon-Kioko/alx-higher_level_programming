@@ -1,75 +1,108 @@
-The ``1-my_list`` module
-============================
+File: my_list_test.txt
 
-Using ``1-mylist``
----------------------
+Importing the MyList class.
+>>> my_list = __import__('1-my_list').MyList
+>>> lst = my_list([3, 1, 5, 2, 4])
+>>> lst.print_sorted()
+[1, 2, 3, 4, 5]
 
-Import function from module:
-    >>> MyList = __import__('1-my_list').MyList
+Test case 1: append method
+>>> lst= my_list([2, 3, 4])
+>>> lst.append(4)
+>>> lst.print_sorted()
+[2, 3, 4, 4]
 
-Correct Class Type test:
-    >>> ml = MyList()
-    >>> type(ml) == MyList
-    True
+Test case 2: Valid input (empty list)
+>>> lst = my_list([])
+>>> lst.print_sorted()
+[]
 
-Correct Instance test:
-    >>> ml = MyList()
-    >>> isinstance(ml, list)
-    True
+Test case 3: Valid input (single element list)
+>>> lst = my_list([42])
+>>> lst.print_sorted()
+[42]
 
-print_sorted method is an instance method:
-    >>> type(MyList.__dict__['print_sorted'])
-    <class 'function'>
+Test case 4: Valid input (repeated elements)
+>>> lst = my_list([2, 2, 1, 1, 3, 3])
+>>> lst.print_sorted()
+[1, 1, 2, 2, 3, 3]
 
-print_sorted method called via class with no args:
-    >>> ml.__class__.print_sorted()
-    Traceback (most recent call last):
-    TypeError: print_sorted() missing 1 required positional argument: 'self'
+Test case 5: Valid input (negative numbers)
+>>> lst = my_list([-5, 3, 0, -2, 1])
+>>> lst.print_sorted()
+[-5, -2, 0, 1, 3]
 
-print_sorted method called with 1 arg:
-    >>> ml.print_sorted([4, 2, 5])
-    Traceback (most recent call last):
-    TypeError: print_sorted() takes 1 positional argument but 2 were given
+Test case 6: Valid input (large list)
+>>> lst = my_list([1000, 100, 10000, 100000, 10000])
+>>> lst.print_sorted()
+[100, 1000, 10000, 10000, 100000]
 
-print_sorted method called with 2 args:
-    >>> ml.print_sorted([4, 2, 5], 1)
-    Traceback (most recent call last):
-    TypeError: print_sorted() takes 1 positional argument but 3 were given
+Test case 7: Valid input (descending order)
+>>> lst = my_list([5, 4, 3, 2, 1])
+>>> lst.print_sorted()
+[1, 2, 3, 4, 5]
 
-Empty list test:
-    >>> ml = MyList()
-    >>> ml.print_sorted()
-    []
+Test case 8: Valid input (already sorted)
+>>> lst = my_list([1, 2, 3, 4, 5])
+>>> lst.print_sorted()
+[1, 2, 3, 4, 5]
 
-Normal list test:
-    >>> ml = MyList([2, 10, 1])
-    >>> ml.print_sorted()
-    [1, 2, 10]
+Test case 9: Valid input (duplicates)
+>>> lst = my_list([3, 1, 3, 2, 2, 1, 5, 5, 4, 4])
+>>> lst.print_sorted()
+[1, 1, 2, 2, 3, 3, 4, 4, 5, 5]
 
-Normal list test 2:
-    >>> ml = MyList([1, 4, 2, 3, 5])
-    >>> ml.print_sorted()
-    [1, 2, 3, 4, 5]
+Test case 10: Valid input (all elements equal)
+>>> lst = my_list([0] * 10)
+>>> lst.print_sorted()
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-Negative ints list test:
-    >>> ml = MyList([-1000, -98, -232565, 0, -23423434, -123])
-    >>> ml.print_sorted()
-    [-23423434, -232565, -1000, -123, -98, 0]
+Test case 11: Valid input (large negative numbers)
+>>> lst = my_list([-10000, -1000, -100, -100000, -10000])
+>>> lst.print_sorted()
+[-100000, -10000, -10000, -1000, -100]
 
-Original list unchanged:
-    >>> ml = MyList([2, 10, 1, -10, 20, 100, 0])
-    >>> ml.print_sorted()
-    [-10, 0, 1, 2, 10, 20, 100]
-    >>> ml
-    [2, 10, 1, -10, 20, 100, 0]
+Test case 12: Valid input (negative and positive numbers)
+>>> lst = my_list([-2, -3, 5, 1, 0, -1, 2, 3])
+>>> lst.print_sorted()
+[-3, -2, -1, 0, 1, 2, 3, 5]
 
-List already in order:
-    >>> ml = MyList([-10, 0, 1, 2, 10, 20, 100])
-    >>> ml.print_sorted()
-    [-10, 0, 1, 2, 10, 20, 100]
+Test case 13: Valid input (large positive numbers)
+>>> lst = my_list([10000, 1000, 100, 100000, 10000])
+>>> lst.print_sorted()
+[100, 1000, 10000, 10000, 100000]
 
-Test append:
-    >>> ml = MyList()
-    >>> ml.append(10)
-    >>> ml
-    [10]
+Test case 14: Valid input (mixed positive and negative)
+>>> lst = my_list([-1, 3, 0, -2, 1])
+>>> lst.print_sorted()
+[-2, -1, 0, 1, 3]
+
+Test case 15: Valid input (single negative element)
+>>> lst = my_list([-42])
+>>> lst.print_sorted()
+[-42]
+
+Test case 16: Valid input (multiple negative elements)
+>>> lst = my_list([-5, -3, 0, -2, -1])
+>>> lst.print_sorted()
+[-5, -3, -2, -1, 0]
+
+Test case 17: Valid input (positive and negative zeros)
+>>> lst = my_list([0, -0, 0, -0])
+>>> lst.print_sorted()
+[0, 0, 0, 0]
+
+Test case 18: Valid input (duplicate zeros)
+>>> lst = my_list([0, 0, 0, 0])
+>>> lst.print_sorted()
+[0, 0, 0, 0]
+
+Test case 19: Valid input (mixed positive, negative, and zero)
+>>> lst = my_list([-1, 0, 3, -2, 1, 0])
+>>> lst.print_sorted()
+[-2, -1, 0, 0, 1, 3]
+
+Test case 20: Valid input (large mixed positive, negative, and zero)
+>>> lst = my_list([10000, -1000, 0, -100000, 10000])
+>>> lst.print_sorted()
+[-100000, -1000, 0, 10000, 10000]
